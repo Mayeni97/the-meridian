@@ -8,7 +8,7 @@ function Header() {
                 The Meridian
             </h1>
             <p className="text-gray-500 text-xs tracking-widest uppercase mt-2">
-                Your Daily Dose of Truth
+                Your Daily Digital Dose of Truth
             </p>
         </header>
     );
