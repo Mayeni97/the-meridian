@@ -26,8 +26,8 @@ function Navbar({currentPage, setCurrentPage}) {
                 onClick={() => setCurrentPage("feed")}
                 className={`font-mono text-xs tracking-widest uppercase py-5 px-4 border-b-2 transition-colors duration-200 ${
                     currentPage === "feed"
-                        ? "border-yellow-600 text-yellow-600"
-                        : "text-gray-500 border-transparent hover:text-white"
+                            ? "border-yellow-600 text-yellow-600"
+                            : "text-gray-500 border-transparent hover:text-white"
     }`}
                 >
                     Feed
