@@ -5,7 +5,7 @@ const TOPICS = [
 
 const TONES = ["Investigative", "Analytical", "Breaking", "Opinionated", "Feature", "Persuasive"]
 
-function ComposePage() {
+function ComposePage({ onPublish, loading }) {
     const [prompt, setPrompt] = useState("")
     const [topic, setTopic] = useState(TOPICS[0])
     const [tone, setTone] = useState(TONES[0])
@@ -63,8 +63,16 @@ function ComposePage() {
                     />
                     </div>
 
-                    <button className="bg-yellow-600 text-black font-mono text-xs tracking-widest uppercase font-bold px-8 py-4 hover:bg-yellow-500 transition-colors">
-                        Publish Now
+                    <button
+                    onClick={() => onPublish(prompt, topic, tone)}
+                    disabled={loading || !prompt.trim()}
+                    className={`font-mono text-xs tracking-widest uppercase font-bold px-8 py-4 transition-colors ${
+                        loading || !prompt.trim()
+                        ? 'bg-gray-700 text-gray-500 cursor-not-allowed'
+                        : 'bg-yellow-600 text-black hover:bg-yellow-500 cursor-pointer'
+                    }`}
+                    >
+                    {loading ? 'Writing...' : ' Publish Now'}
                     </button>
 
             </div>
