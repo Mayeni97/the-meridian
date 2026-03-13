@@ -11,6 +11,8 @@ function App() {
   const [articles, setArticles] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState("")
+  const [selectedArticle, setSelectedArticle] = useState(null)
+
 
   useEffect(() => {
     if (schedule.length === 0) { return }
@@ -73,7 +75,11 @@ function App() {
          loading={loading} />
       )}
       {currentPage === "feed" && 
-        <FeedPage articles={articles} />}
+        <FeedPage articles={articles}
+          selectedArticle={selectedArticle}
+          setSelectedArticle={setSelectedArticle}
+        /> 
+      }
 
         {currentPage === "scheduled" && (
           <SchedulePage scheduled={schedule} />
