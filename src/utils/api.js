@@ -24,7 +24,8 @@ export async function generateArticle(prompt, topic, tone) {
                   "title": "article title here",
                   "subtitle": "article subtitle here",
                   "body": "full article body here with paragraphs separated by double newlines",
-                  "tags": ["tag1", "tag2", "tag3"]
+                  "tags": ["tag1", "tag2", "tag3"],
+                  "byline": "Journalist Full Name"
                 }`
             }
           ]
@@ -48,7 +49,7 @@ export async function generateArticle(prompt, topic, tone) {
     tags: parsed.tags,
     topic,
     tone,
-    byline: "Nova Sinclair",
+    byline: parsed.byline,
     publishedAt: new Date()
   }
 }
