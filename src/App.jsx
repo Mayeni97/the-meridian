@@ -64,7 +64,7 @@ function App() {
 
   return (
     <div className="bg-black min-h-screen">
-      <Header />
+      <Header articles={articles} />
       <Navbar currentPage={currentPage} setCurrentPage={setCurrentPage} />
       {error && (
         <p className="text-red-500 font-mono text-xs text-center py-4">{error}</p>
