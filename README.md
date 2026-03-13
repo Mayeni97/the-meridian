@@ -48,3 +48,5 @@ An AI-powered journalism platform that researches, writes, and publishes article
 
 This project requires a Google Gemini API key to generate articles.
 A free tier key can be obtained at aistudio.google.com.
+
+Live Demo: https://the-meridian-one.vercel.app/
