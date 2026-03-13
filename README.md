@@ -1,16 +1,50 @@
-# React + Vite
+# The Meridian
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An AI-powered journalism platform that researches, writes, and publishes articles on any topic — instantly or on a schedule.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- AI generated articles powered by Google Gemini
+- Editorial compose desk with topic and tone selection
+- Live published feed with full article view
+- Article scheduler with auto-publish
+- Live news ticker
+- Newsroom stats sidebar
+- Download articles as txt files
+- AI generated journalist bylines
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 18
+- Vite
+- Tailwind CSS
+- Google Gemini API
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Clone the repository
+   git clone https://github.com/yourusername/the-meridian.git
+
+2. Install dependencies
+   npm install
+
+3. Create a .env.local file in the root and add your Gemini API key
+   VITE_GEMINI_API_KEY=your_api_key_here
+
+4. Run the development server
+   npm run dev
+
+5. Open http://localhost:5173
+
+## Usage
+
+1. Go to Compose and write a story brief
+2. Select a topic and tone
+3. Click Publish Now or schedule for later
+4. Read your article in the Feed
+5. Download any article as a txt file
+
+## Notes
+
+This project requires a Google Gemini API key to generate articles.
+A free tier key can be obtained at aistudio.google.com.
