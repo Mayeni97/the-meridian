@@ -1,5 +1,27 @@
 function FeedPage({ articles, selectedArticle, setSelectedArticle }) {
 
+    function downloadArticle(article) {
+        const content = `${article.title}
+        ${"=".repeat(article.title.length)}
+        
+        By ${article.byline}
+        Published: ${article.publishedAt.toLocaleDateString()}
+        Topic: ${article.topic} | Tone: ${article.tone}
+
+        ${article.body}
+
+        --------------------------
+        Published by The Meridian`
+
+        const blob = new Blob([content], { type: "text/plain" })
+        const url = URL.createObjectURL(blob)
+        const a = document.createElement("a")
+        a.href = url
+        a.download = `${article.title.toLowerCase().replace(/\s+/g, "-")}.txt`
+        a.click()
+        URL.revokeObjectURL(url)
+    }
+        
   if (selectedArticle) {
     return (
       <div className="max-w-2xl mx-auto px-8 py-12">
@@ -44,6 +66,14 @@ function FeedPage({ articles, selectedArticle, setSelectedArticle }) {
             ))}
           </div>
         )}
+        <div className="mt-8">
+          <button
+            onClick={() => downloadArticle(selectedArticle)}
+            className="font-mono text-xs text-gray-500 tracking-widest uppercase border border-gray-800 px-4 py-2 hover:border-yellow-600 hover:text-yellow-600 transition-colors"
+          >
+            Download Article
+          </button>
+        </div>
       </div>
     )
   }
