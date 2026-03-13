@@ -39,7 +39,8 @@ export async function generateArticle(prompt, topic, tone) {
     throw new Error(`API error: ${response.status}`)
   }
   const text = data.candidates[0].content.parts[0].text
-  const parsed = JSON.parse(text)
+  const clean = text.replace(/```json|```/g, "").trim()
+  const parsed = JSON.parse(clean)
 
   return {
     id: Date.now(),
